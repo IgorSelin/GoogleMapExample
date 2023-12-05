@@ -1,24 +1,12 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import Map from "./components/Map";
 
 function App() {
+  const center = { lat: 50.4008056, lng: 29.908886 };
+  const zoom = 3.5;
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <h1> Google Map Prototype</h1>
+      <Map center={center} zoom={zoom} />
     </div>
   );
 }

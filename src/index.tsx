@@ -1,19 +1,23 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
+import App from "./App";
+import { Wrapper, Status } from "@googlemaps/react-wrapper";
 
 const root = ReactDOM.createRoot(
-  document.getElementById('root') as HTMLElement
-);
-root.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>
+  document.getElementById("root") as HTMLElement
 );
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const render = (status: Status) => {
+  return <h1>{status}</h1>;
+};
+
+const apiKey = "AIzaSyAw7A7ks0U9LBf8-zNvliAg4LaXYss4JkE";
+
+root.render(
+  <React.StrictMode>
+    <Wrapper apiKey={apiKey} render={render}>
+      <App />
+    </Wrapper>
+  </React.StrictMode>
+);

@@ -1,0 +1,8 @@
+.container {
+  min-height: 400px;
+  width: 100%;
+
+  .map {
+    position: static !important;
+  }
+}
